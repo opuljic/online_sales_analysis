@@ -16,3 +16,10 @@ class ProductManager:
 
     def display_total_value(self):
         return sum(product.price * product.quantity for product in self.products)
+
+    def remove_product_by_name(self, name):
+        for index, product in enumerate(self.products):
+            if product.name == name:
+                del self.products[index]
+                return True
+        return False
